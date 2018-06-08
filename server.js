@@ -4,7 +4,7 @@ const fs = require('fs');
 
 var app = express();
 
-const port = process.env.PORT || 3005;
+const port = process.env.PORT || 4049;
 hbs.registerPartials(__dirname + '/views/partials');
 app.set('view engine','hbs');
 hbs.registerHelper('getCurrentYear',()=>{
@@ -48,6 +48,12 @@ app.get('/', (req, res) =>{
 app.get('/about', (req, res)=>{
   res.render('about.hbs', {
     title: 'About Page'
+  })
+});
+
+app.get('/projects', (req, res)=>{
+  res.render('project.hbs', {
+    title: 'Project Page'
   })
 });
 
